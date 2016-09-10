@@ -21,8 +21,6 @@ Returns a comma-seperated list in a string
 
 code_vector_to_csv_list(c("A","B","C"))
 
-('A', 'B', 'C')
-
 }
 \keyword{coder,}
 \keyword{sql}

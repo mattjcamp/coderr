@@ -10,8 +10,6 @@
 #'
 #' code_vector_to_csv_list(c("A","B","C"))
 #'
-#' ('A', 'B', 'C')
-#'
 
 code_vector_to_csv_list <- function(vector,
                                     add.quotes = TRUE,
