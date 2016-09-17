@@ -8,11 +8,13 @@ code_sql_group_by(sql, aggregator.cols, group.by.cols,
   include.all.possible.combos = FALSE)
 }
 \arguments{
-\item{sql}{an object of type sql_sample, character in SQL format or a db_table that has code which selects a sample of records}
+\item{sql}{an object of type sql_sample, character string in SQL format or a db_table that has code which selects a sample of records}
 
 \item{aggregator.cols}{the aggregation rules to apply for each measure (ie: count(*) AS N)}
 
 \item{group.by.cols}{the columns that you wish to group by}
+
+\item{include.all.possible.combos}{when TRUE does group by statements for every possible combo and then uses UNION to put them all together.}
 }
 \description{
 SQL Code to get aggregated statistics for groups

@@ -3,9 +3,10 @@
 #'
 #' SQL Code to get aggregated statistics for groups
 #' @keywords database, state, location
-#' @param sql an object of type sql_sample, character in SQL format or a db_table that has code which selects a sample of records
+#' @param sql an object of type sql_sample, character string in SQL format or a db_table that has code which selects a sample of records
 #' @param aggregator.cols the aggregation rules to apply for each measure (ie: count(*) AS N)
 #' @param group.by.cols the columns that you wish to group by
+#' @param include.all.possible.combos when TRUE does group by statements for every possible combo and then uses UNION to put them all together.
 #' @export
 #' @examples
 #
@@ -45,7 +46,6 @@ code_sql_group_by <- function(sql,
                                                              add.quotes = FALSE,
                                                              enclose.in.parenthesis = FALSE)
 
-    # aggregator.cols <- c("'A' AS ABean", "'BB' AS B", "CCC AS C")
     s <- str_locate(aggregator.cols, "AS")[,1]
     l <- str_length(aggregator.cols)
     s <- s + 2
@@ -84,10 +84,6 @@ code_sql_group_by <- function(sql,
     sql <- group.by.sql.list[1]
     for (i in 2:l)
       sql <- sprintf("%s UNION %s", sql, group.by.sql.list[i])
-
-
-
-
 
   }
 
