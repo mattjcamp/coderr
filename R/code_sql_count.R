@@ -1,9 +1,10 @@
 
 #' Count Records
 #'
-#' SQL Code to get a distinct column values
+#' @description SQL Code to get a distinct column values
+#' @details Counts the rows from a SELECT statement or table
 #' @keywords database, state, location
-#' @param sql an object of type sql_sample, character in SQL format or a db_table that has code which selects a sample of records
+#' @param sql an object of type {\link{code_sql_sample}}, character in SQL format or a {\link{db_table}} that has SQL which selects records
 #' @export
 #' @examples
 #

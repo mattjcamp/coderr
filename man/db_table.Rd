@@ -2,15 +2,20 @@
 % Please edit documentation in R/db_table.R
 \name{db_table}
 \alias{db_table}
-\title{Database Table}
+\title{Database Table Definition}
 \usage{
 db_table(table_name, database = "")
 }
 \arguments{
+\item{table_name}{the name of the table (without the database or schema prefix)}
+
 \item{database}{the database where the table is located}
 }
 \description{
-State descriptions linked with AICODE
+Everything you need to know about a database table.
+}
+\details{
+This version of db_table is generic and meant as a template. Code custom versions of this object for tables that you need to reference often. Can be used as input for a sample_sql object.
 }
 \keyword{database,}
 \keyword{location}

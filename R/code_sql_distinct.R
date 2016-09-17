@@ -3,7 +3,7 @@
 #'
 #' SQL Code to get a distinct column values
 #' @keywords database, state, location
-#' @param db_table an object of type db_table which includes the table where the records are located
+#' @param sql an object of type {\link{code_sql_sample}}, character in SQL format or a {\link{db_table}} that has SQL which selects records
 #' @param col the columns that you want to look at
 #' @export
 #' @examples

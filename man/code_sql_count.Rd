@@ -7,10 +7,13 @@
 code_sql_count(sql)
 }
 \arguments{
-\item{sql}{an object of type sql_sample, character in SQL format or a db_table that has code which selects a sample of records}
+\item{sql}{an object of type {\link{code_sql_sample}}, character in SQL format or a {\link{db_table}} that has SQL which selects records}
 }
 \description{
 SQL Code to get a distinct column values
+}
+\details{
+Counts the rows from a SELECT statement or table
 }
 \keyword{database,}
 \keyword{location}

@@ -8,7 +8,7 @@ code_sql_group_by(sql, aggregator.cols, group.by.cols,
   include.all.possible.combos = FALSE)
 }
 \arguments{
-\item{sql}{an object of type sql_sample, character string in SQL format or a db_table that has code which selects a sample of records}
+\item{sql}{an object of type {\link{code_sql_sample}}, character in SQL format or a {\link{db_table}} that has SQL which selects records}
 
 \item{aggregator.cols}{the aggregation rules to apply for each measure (ie: count(*) AS N)}
 

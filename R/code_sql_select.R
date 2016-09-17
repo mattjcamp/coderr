@@ -1,6 +1,6 @@
-#' Code a SQL query
+#' Code a SQL SELECT
 #'
-#' Returns a formated sql query based on parameters. Useful when automating code genaration
+#' Returns a formated sql SELECT query based on parameters. Useful when automating code
 #' @param table.name
 #' @param select.cols
 #' @param joins
@@ -13,21 +13,21 @@
 #' @export
 #' @examples
 
-code_sql_query <- function(table.name,
-                           select.cols = c("count(*) AS N"),
-                           joins = NULL,
-                           filters = NULL,
-                           filters.logical = "AND",
-                           group.by.cols = NULL,
-                           order.by.cols = NULL,
-                           alias = "RECORDS"){
+code_sql_select <- function(table.name,
+                            select.cols = c("count(*) AS N"),
+                            joins = NULL,
+                            filters = NULL,
+                            filters.logical = "AND",
+                            group.by.cols = NULL,
+                            order.by.cols = NULL,
+                            alias = "RECORDS"){
 
   library(stringr)
 
   sql <- sprintf("
 
   SELECT SELECT_COLS
-  FROM TABLE_NAME %s
+  FROM (TABLE_NAME) %s
   JOINS
   WHERE_STATEMENT
   GROUP_BY_STATEMENT

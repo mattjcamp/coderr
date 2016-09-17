@@ -3,7 +3,7 @@
 #'
 #' SQL Code to get the top five records from a sample
 #' @keywords database, state, location
-#' @param sql an object of type sql_sample, character in SQL format or a db_table that has code which selects a sample of records
+#' @param sql an object of type {\link{code_sql_sample}}, character in SQL format or a {\link{db_table}} that has SQL which selects records
 #' @export
 #' @examples
 #

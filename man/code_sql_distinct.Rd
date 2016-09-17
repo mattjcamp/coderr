@@ -7,9 +7,9 @@
 code_sql_distinct(sql, col)
 }
 \arguments{
-\item{col}{the columns that you want to look at}
+\item{sql}{an object of type {\link{code_sql_sample}}, character in SQL format or a {\link{db_table}} that has SQL which selects records}
 
-\item{db_table}{an object of type db_table which includes the table where the records are located}
+\item{col}{the columns that you want to look at}
 }
 \description{
 SQL Code to get a distinct column values
