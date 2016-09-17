@@ -17,11 +17,11 @@ code_sql_sample <- function(table, filter = NULL){
   # GET DEFAULT SAMPLE
 
   if ("db_table" %in% class(table)) {
-    sql <- code_sql_select(table.name = table$table_name,
+    sql <- code_sql_select(table_or_sql = table$table_name,
                            select.cols = "*",
                            filters = filter)
   } else {
-    sql <- code_sql_select(table.name = table,
+    sql <- code_sql_select(table_or_sql = table,
                            select.cols = "*",
                            filters = filter)
   }

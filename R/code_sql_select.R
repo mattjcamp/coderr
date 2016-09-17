@@ -1,7 +1,7 @@
 #' Code a SQL SELECT
 #'
 #' Returns a formated sql SELECT query based on parameters. Useful when automating code
-#' @param table.name
+#' @param table_or_sql
 #' @param select.cols
 #' @param joins
 #' @param filters
@@ -13,7 +13,7 @@
 #' @export
 #' @examples
 
-code_sql_select <- function(table.name,
+code_sql_select <- function(table_or_sql,
                             select.cols = c("count(*) AS N"),
                             joins = NULL,
                             filters = NULL,
@@ -49,15 +49,15 @@ code_sql_select <- function(table.name,
 
   # FROM Table
 
-  if (!length(table.name) == 1)
-    stop(sprintf("%s: you can specify only exactly one table.name parameter",
+  if (!length(table_or_sql) == 1)
+    stop(sprintf("%s: you can specify only exactly one table_or_sql parameter",
                  function.name))
 
-  if (table.name == "")
-    stop(sprintf("%s: your table.name parameter cannot be blank",
+  if (table_or_sql == "")
+    stop(sprintf("%s: your table_or_sql parameter cannot be blank",
                  function.name))
 
-  sql <- str_replace(sql, "TABLE_NAME", table.name)
+  sql <- str_replace(sql, "TABLE_NAME", table_or_sql)
 
   # Joins
 

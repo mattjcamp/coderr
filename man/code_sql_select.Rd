@@ -4,9 +4,9 @@
 \alias{code_sql_select}
 \title{Code a SQL SELECT}
 \usage{
-code_sql_select(table.name, select.cols = c("count(*) AS N"), joins = NULL,
-  filters = NULL, filters.logical = "AND", group.by.cols = NULL,
-  order.by.cols = NULL, alias = "RECORDS")
+code_sql_select(table_or_sql, select.cols = c("count(*) AS N"),
+  joins = NULL, filters = NULL, filters.logical = "AND",
+  group.by.cols = NULL, order.by.cols = NULL, alias = "RECORDS")
 }
 \description{
 Returns a formated sql SELECT query based on parameters. Useful when automating code
