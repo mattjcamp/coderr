@@ -30,10 +30,12 @@ test_that("code_sql_select plays well with others", {
 
   d <-
     sample %>%
+    code_sql_select(select.cols = "stations",
+                    filters = "stations = 41") %>%
     code_sql_count() %>%
     sqldf()
 
-  expect_equal(d[1, 1], 1000)
+  expect_equal(d[1, 1], 12)
 
 
 })

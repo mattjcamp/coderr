@@ -49,6 +49,9 @@ code_sql_select <- function(table_or_sql,
 
   # FROM Table
 
+  if ("sql_sample" %in% class(table_or_sql))
+    table_or_sql <- table_or_sql[1]
+
   if (!length(table_or_sql) == 1)
     stop(sprintf("%s: you can specify only exactly one table_or_sql parameter",
                  function.name))
