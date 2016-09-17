@@ -10,7 +10,10 @@
 #' @examples
 #
 
-code_sql_group_by <- function(sql, aggregator.cols, group.by.cols){
+code_sql_group_by <- function(sql,
+                              aggregator.cols,
+                              group.by.cols,
+                              include.all.possible.combos = FALSE){
 
   if (!any(!c("sql_sample", "character", "db_table") %in% class(sql)))
       stop("code_sql_group_by requires sql to be one of these objects: character, sql_sample or db_table")
@@ -20,17 +23,73 @@ code_sql_group_by <- function(sql, aggregator.cols, group.by.cols){
   else
     sql <- sql[1]
 
-  aggregator.cols <- code_vector_to_csv_list(vector = aggregator.cols,
+  if (!include.all.possible.combos) {
+
+    aggregator.cols <- code_vector_to_csv_list(vector = aggregator.cols,
+                                               add.quotes = FALSE,
+                                               enclose.in.parenthesis = FALSE)
+
+    group.by.cols <- code_vector_to_csv_list(vector = group.by.cols,
                                              add.quotes = FALSE,
                                              enclose.in.parenthesis = FALSE)
 
-  group.by.cols <- code_vector_to_csv_list(vector = group.by.cols,
-                                           add.quotes = FALSE,
-                                           enclose.in.parenthesis = FALSE)
+    sql <- sprintf("SELECT %s, %s FROM (%s) RECORDS GROUP BY %s",
+                   group.by.cols, aggregator.cols,
+                   sql, group.by.cols)
 
-  sql <- sprintf("SELECT %s, %s FROM (%s) RECORDS GROUP BY %s",
-                 group.by.cols, aggregator.cols,
-                 sql, group.by.cols)
+  } else {
+
+
+    aggregator.cols.with.stat.def <- aggregator.cols
+    aggregator.cols.with.stat.def <- code_vector_to_csv_list(vector = aggregator.cols.with.stat.def,
+                                                             add.quotes = FALSE,
+                                                             enclose.in.parenthesis = FALSE)
+
+    # aggregator.cols <- c("'A' AS ABean", "'BB' AS B", "CCC AS C")
+    s <- str_locate(aggregator.cols, "AS")[,1]
+    l <- str_length(aggregator.cols)
+    s <- s + 2
+    aggregator.cols <- str_trim(str_sub(aggregator.cols, s, l))
+
+    cols <- code_all_vector_combinations(group.by.cols)
+    cols.length <- length(cols)
+    group.by.sql.list <- NULL
+
+    for (i in 1:cols.length) {
+
+      group.by.cols.string <- code_vector_to_csv_list(vector = cols[[i]],
+                                                      add.quotes = FALSE,
+                                                      enclose.in.parenthesis = FALSE)
+      group.sql <- sprintf("SELECT %s, %s FROM (%s) RECORDS GROUP BY %s",
+                           group.by.cols.string, aggregator.cols.with.stat.def,
+                           sql, group.by.cols.string)
+
+      cols.to.add  <- group.by.cols[!group.by.cols %in% cols[[i]]]
+      all.cols.order <- c(cols[[i]], cols.to.add)
+      all.cols.order <- order(all.cols.order)
+      cols.to.add <- sprintf("'All' AS %s", cols.to.add)
+      all.cols <- c(cols[[i]], cols.to.add)
+      all.cols <- all.cols[all.cols.order]
+      all.cols <- c(all.cols, aggregator.cols)
+      all.cols <- code_vector_to_csv_list(all.cols,
+                                          add.quotes = FALSE,
+                                          enclose.in.parenthesis = FALSE)
+      group.sql <- sprintf("SELECT %s FROM (%s) RECORDS", all.cols, group.sql)
+
+      group.by.sql.list <- c(group.by.sql.list, group.sql)
+
+    }
+
+    l <- length(group.by.sql.list)
+    sql <- group.by.sql.list[1]
+    for (i in 2:l)
+      sql <- sprintf("%s UNION %s", sql, group.by.sql.list[i])
+
+
+
+
+
+  }
 
   sql
 

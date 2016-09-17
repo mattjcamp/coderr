@@ -4,7 +4,8 @@
 \alias{code_sql_group_by}
 \title{Aggregate Grouped Records}
 \usage{
-code_sql_group_by(sql, aggregator.cols, group.by.cols)
+code_sql_group_by(sql, aggregator.cols, group.by.cols,
+  include.all.possible.combos = FALSE)
 }
 \arguments{
 \item{sql}{an object of type sql_sample, character in SQL format or a db_table that has code which selects a sample of records}
