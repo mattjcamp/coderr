@@ -1,4 +1,4 @@
-Package: Coder
+Package: coderr
 Type: Package
 Title: Takes objects like vectors and turns them into code like SQL statements
 Version: 0.3.2
