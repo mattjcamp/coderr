@@ -1,6 +1,6 @@
 # Coder
 
-Coder helps you write SQL code in a way that presents a clear workflow.
+coderr helps you write SQL code in a way that presents a clear workflow.
 
 Here is an example that aggregates earthquake information from the built-in
 `quakes` dataset.:
