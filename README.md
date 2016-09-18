@@ -1,6 +1,6 @@
 # Coder
 
-coderr helps you write SQL code in a way that presents a clear workflow.
+**coderr** helps you write SQL code in a way that presents a clear workflow.
 
 Here is an example that aggregates earthquake information from the built-in
 `quakes` dataset.:
@@ -18,4 +18,4 @@ Here is an example that aggregates earthquake information from the built-in
 
 This calculates earthquake magnitude means by station and then presents only stations with station names with a value less than 15.
 
-`Coder` is used in large scale statistical programming projects where data is stored on remote large scale databases. There's also more to it than that - check out the code and tests to see more.
+**coderr** is used in large scale statistical programming projects where data is stored on remote large scale databases. There's also more to it than that - check out the code and tests to see more.
