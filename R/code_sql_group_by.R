@@ -46,10 +46,10 @@ code_sql_group_by <- function(sql,
                                                              add.quotes = FALSE,
                                                              enclose.in.parenthesis = FALSE)
 
-    s <- str_locate(aggregator.cols, "AS")[,1]
-    l <- str_length(aggregator.cols)
+    s <- stringr::str_locate(aggregator.cols, "AS")[,1]
+    l <- stringr::str_length(aggregator.cols)
     s <- s + 2
-    aggregator.cols <- str_trim(str_sub(aggregator.cols, s, l))
+    aggregator.cols <- stringr::str_trim(stringr::str_sub(aggregator.cols, s, l))
 
     cols <- code_all_vector_combinations(group.by.cols)
     cols.length <- length(cols)

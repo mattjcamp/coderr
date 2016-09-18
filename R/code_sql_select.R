@@ -22,8 +22,6 @@ code_sql_select <- function(table_or_sql,
                             order.by.cols = NULL,
                             alias = "RECORDS"){
 
-  library(stringr)
-
   sql <- sprintf("
 
   SELECT SELECT_COLS
@@ -45,7 +43,7 @@ code_sql_select <- function(table_or_sql,
                    function.name))
 
   select.cols <- paste(select.cols, collapse = ", ")
-  sql <- str_replace(sql, "SELECT_COLS", select.cols)
+  sql <- stringr:: str_replace(sql, "SELECT_COLS", select.cols)
 
   # FROM Table
 
@@ -60,7 +58,7 @@ code_sql_select <- function(table_or_sql,
     stop(sprintf("%s: your table_or_sql parameter cannot be blank",
                  function.name))
 
-  sql <- str_replace(sql, "TABLE_NAME", table_or_sql)
+  sql <- stringr:: str_replace(sql, "TABLE_NAME", table_or_sql)
 
   # Joins
 
@@ -69,7 +67,7 @@ code_sql_select <- function(table_or_sql,
   else
     joins <- ""
 
-  sql <- str_replace(sql, "JOINS", joins)
+  sql <- stringr:: str_replace(sql, "JOINS", joins)
 
   # WHERE Statement
 
@@ -83,7 +81,7 @@ code_sql_select <- function(table_or_sql,
   }else
     filters <- ""
 
-  sql <- str_replace(sql, "WHERE_STATEMENT",
+  sql <- stringr:: str_replace(sql, "WHERE_STATEMENT",
                      filters)
 
   # GROUP BY
@@ -95,7 +93,7 @@ code_sql_select <- function(table_or_sql,
   else
     group.by.cols <- ""
 
-  sql <- str_replace(sql, "GROUP_BY_STATEMENT", group.by.cols)
+  sql <- stringr:: str_replace(sql, "GROUP_BY_STATEMENT", group.by.cols)
 
   # ORDER BY
 
@@ -106,9 +104,9 @@ code_sql_select <- function(table_or_sql,
   else
     order.by.cols <- ""
 
-  sql <- str_replace(sql, "ORDER_BY_STATEMENT", order.by.cols)
+  sql <- stringr:: str_replace(sql, "ORDER_BY_STATEMENT", order.by.cols)
 
-  sql <- gsub("\\s+", " ", str_trim(sql))
+  sql <- gsub("\\s+", " ", stringr:: str_trim(sql))
 
   sql
 
