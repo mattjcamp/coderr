@@ -1,5 +1,4 @@
 library(sqldf)
-library(Coder)
 
 context("SQL GROUP BY")
 
