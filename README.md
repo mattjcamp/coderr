@@ -6,7 +6,7 @@ Here is an example that aggregates earthquake information from the built-in
 `quakes` dataset.:
 
     library(sqldf)
-    library(Coder)
+    library(coderr)
 
     code_sql_sample("quakes") %>%
     code_sql_group_by(aggregator.cols = "avg(mag) AS mag_mean",
