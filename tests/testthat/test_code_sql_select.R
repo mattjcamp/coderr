@@ -6,7 +6,7 @@ test_that("code_sql_select writes queries correctly", {
 
   sql <- code_sql_select("quakes")
 
-  expect_equal(sql, "SELECT count(*) AS N FROM (quakes) RECORDS")
+  expect_equal(sql, "SELECT count(*) AS N FROM quakes RECORDS")
 
   d <-
     code_sql_select("quakes",

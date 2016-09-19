@@ -22,14 +22,25 @@ code_sql_select <- function(table_or_sql,
                             order.by.cols = NULL,
                             alias = "RECORDS"){
 
-  sql <- sprintf("
+  library(stringr)
 
-  SELECT SELECT_COLS
-  FROM (TABLE_NAME) %s
-  JOINS
-  WHERE_STATEMENT
-  GROUP_BY_STATEMENT
-  ORDER_BY_STATEMENT", alias)
+  if (str_detect(table_or_sql, "SELECT"))
+    sql <- sprintf("
+        SELECT SELECT_COLS
+        FROM (TABLE_NAME) %s
+        JOINS
+        WHERE_STATEMENT
+        GROUP_BY_STATEMENT
+        ORDER_BY_STATEMENT", alias)
+  else
+      sql <- sprintf("
+        SELECT SELECT_COLS
+        FROM TABLE_NAME %s
+        JOINS
+        WHERE_STATEMENT
+        GROUP_BY_STATEMENT
+        ORDER_BY_STATEMENT", alias)
+
 
   # SELECT
 
