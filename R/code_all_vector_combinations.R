@@ -33,6 +33,12 @@ code_all_vector_combinations <- function(vector, include.these.in.each = NULL){
 
   r <- unique(c.all)
 
+  if (length(vector) == 2)
+    r <- c(r, list(c(vector[1], vector[2], include.these.in.each)))
+
+  if (length(vector) == 1)
+    r <- r[1]
+
   r
 
 }
