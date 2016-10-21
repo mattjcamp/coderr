@@ -1,7 +1,7 @@
 Package: coderr
 Type: Package
 Title: Takes objects like vectors and turns them into code like SQL statements
-Version: 0.3.4
+Version: 0.3.5
 Author: Matt Campbell
 Maintainer: Who to complain to <mjcampbell74@gmail.com>
 Description: Helps you to write code; especially useful when you are trying to automate code generation.

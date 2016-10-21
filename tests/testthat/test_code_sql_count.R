@@ -13,5 +13,10 @@ test_that("SQL Count behaves as expected", {
 
   expect_equal(d[1, 1], 1000)
 
+  d <-
+    sample %>%
+    code_sql_count(by = "stations") %>%
+    sqldf()
+
 
 })

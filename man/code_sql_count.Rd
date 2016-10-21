@@ -4,10 +4,12 @@
 \alias{code_sql_count}
 \title{Count Records}
 \usage{
-code_sql_count(sql)
+code_sql_count(sql, by = NULL)
 }
 \arguments{
 \item{sql}{an object of type {\link{code_sql_sample}}, character in SQL format or a {\link{db_table}} that has SQL which selects records}
+
+\item{by}{count by these groups}
 }
 \description{
 SQL Code to get a distinct column values
