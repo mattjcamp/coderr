@@ -8,6 +8,11 @@ code_sql_select(table_or_sql, select.cols = c("count(*) AS N"),
   joins = NULL, filters = NULL, filters.logical = "AND",
   group.by.cols = NULL, order.by.cols = NULL, alias = "RECORDS")
 }
+\arguments{
+\item{table_or_sql}{SQL query or table name that you will select records from}
+
+\item{select.cols}{the columns that you would like to select}
+}
 \description{
 Returns a formated sql SELECT query based on parameters. Useful when automating code
 }

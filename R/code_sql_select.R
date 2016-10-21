@@ -1,8 +1,8 @@
 #' Code a SQL SELECT
 #'
 #' Returns a formated sql SELECT query based on parameters. Useful when automating code
-#' @param table_or_sql
-#' @param select.cols
+#' @param table_or_sql SQL query or table name that you will select records from
+#' @param select.cols the columns that you would like to select
 #' @param joins
 #' @param filters
 #' @param filters.logical
@@ -24,7 +24,7 @@ code_sql_select <- function(table_or_sql,
 
   library(stringr)
 
-  if (str_detect(table_or_sql, "SELECT"))
+  if (str_detect(str_to_upper(table_or_sql), "SELECT"))
     sql <- sprintf("
         SELECT SELECT_COLS
         FROM (TABLE_NAME) %s
