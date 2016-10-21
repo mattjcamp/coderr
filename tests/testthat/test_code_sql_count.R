@@ -18,5 +18,6 @@ test_that("SQL Count behaves as expected", {
     code_sql_count(by = "stations") %>%
     sqldf()
 
+  expect_equal(d[1, 2], 20)
 
 })

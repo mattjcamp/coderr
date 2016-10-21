@@ -25,10 +25,10 @@ code_sql_count <- function(sql, by = NULL){
     sql <- sql$table_name
 
   if (is.null(by)) {
-    sql <- sprintf("SELECT count(*) FROM (%s) RECORDS", sql)
+    sql <- sprintf("SELECT count(*) as n FROM (%s) RECORDS", sql)
   } else {
     by <- code_vector_to_csv_list(by, FALSE, FALSE)
-    sql <- sprintf("SELECT count(*) FROM (%s) RECORDS GROUP BY %s", sql, by)
+    sql <- sprintf("SELECT %s, count(*) as n FROM (%s) RECORDS GROUP BY %s", by, sql, by)
   }
 
   sql
