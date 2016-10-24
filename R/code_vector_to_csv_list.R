@@ -23,5 +23,5 @@ code_vector_to_csv_list <- function(vector,
   if (enclose.in.parenthesis)
     s <- sprintf("(%s)", s)
 
-    s
+  s
 }

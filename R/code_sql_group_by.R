@@ -3,7 +3,7 @@
 #'
 #' SQL Code to get aggregated statistics for groups
 #' @keywords database, state, location
-#' @param sql an object of type {\link{code_sql_sample}}, character in SQL format or a {\link{db_table}} that has SQL which selects records
+#' @param sql SQL which selects records
 #' @param aggregator.cols the aggregation rules to apply for each measure (ie: count(*) AS N)
 #' @param group.by.cols the columns that you wish to group by
 #' @param include.all.possible.combos when TRUE does group by statements for every possible combo and then uses UNION to put them all together.
@@ -16,13 +16,7 @@ code_sql_group_by <- function(sql,
                               group.by.cols,
                               include.all.possible.combos = FALSE){
 
-  if (!any(!c("sql_sample", "character", "db_table") %in% class(sql)))
-      stop("code_sql_group_by requires sql to be one of these objects: character, sql_sample or db_table")
-
-  if ("db_table" %in% class(sql))
-    sql <- sprintf("SELECT * FROM %s", sql$table_name)
-  else
-    sql <- sql[1]
+  sql <- sql[1]
 
   if (!include.all.possible.combos) {
 
@@ -39,7 +33,6 @@ code_sql_group_by <- function(sql,
                    sql, group.by.cols)
 
   } else {
-
 
     aggregator.cols.with.stat.def <- aggregator.cols
     aggregator.cols.with.stat.def <- code_vector_to_csv_list(vector = aggregator.cols.with.stat.def,

@@ -4,10 +4,10 @@
 \alias{code_sql_head}
 \title{Get Top Records}
 \usage{
-code_sql_head(sql)
+code_sql_head(sql, num_rows = 5)
 }
 \arguments{
-\item{sql}{an object of type {\link{code_sql_sample}}, character in SQL format or a {\link{db_table}} that has SQL which selects records}
+\item{sql}{an object of type {\link{code_sql_sample}}, character in SQL format that has SQL which selects records}
 }
 \description{
 SQL Code to get the top five records from a sample

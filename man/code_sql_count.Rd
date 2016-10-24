@@ -7,7 +7,7 @@
 code_sql_count(sql, by = NULL)
 }
 \arguments{
-\item{sql}{an object of type {\link{code_sql_sample}}, character in SQL format or a {\link{db_table}} that has SQL which selects records}
+\item{sql}{an object of type {\link{code_sql_sample}}, character in SQL format that has SQL which selects records}
 
 \item{by}{count by these groups}
 }

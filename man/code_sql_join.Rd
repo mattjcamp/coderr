@@ -7,7 +7,7 @@
 code_sql_join(sql, table_to_join, by, sel.cols = "*", join_type = "inner")
 }
 \arguments{
-\item{sql}{an object of type {\link{code_sql_sample}}, character in SQL format or a {\link{db_table}} that has SQL which selects records}
+\item{sql}{an object of type {\link{code_sql_sample}}, character in SQL format that has SQL which selects records}
 
 \item{table_to_join}{the table that you want to join to}
 

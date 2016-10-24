@@ -7,7 +7,7 @@
 code_sql_distinct(sql, col)
 }
 \arguments{
-\item{sql}{an object of type {\link{code_sql_sample}}, character in SQL format or a {\link{db_table}} that has SQL which selects records}
+\item{sql}{SQL which selects records}
 
 \item{col}{the columns that you want to look at}
 }

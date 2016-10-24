@@ -14,7 +14,7 @@
 #' @examples
 
 code_sql_select <- function(table_or_sql,
-                            select.cols = c("count(*) AS N"),
+                            select.cols = c("*"),
                             joins = NULL,
                             filters = NULL,
                             filters.logical = "AND",
@@ -41,7 +41,6 @@ code_sql_select <- function(table_or_sql,
         GROUP_BY_STATEMENT
         ORDER_BY_STATEMENT", alias)
 
-
   # SELECT
 
   if (length(select.cols) == 0)
@@ -54,7 +53,7 @@ code_sql_select <- function(table_or_sql,
                    function.name))
 
   select.cols <- paste(select.cols, collapse = ", ")
-  sql <- stringr:: str_replace(sql, "SELECT_COLS", select.cols)
+  sql <- str_replace(sql, "SELECT_COLS", select.cols)
 
   # FROM Table
 
@@ -69,7 +68,7 @@ code_sql_select <- function(table_or_sql,
     stop(sprintf("%s: your table_or_sql parameter cannot be blank",
                  function.name))
 
-  sql <- stringr:: str_replace(sql, "TABLE_NAME", table_or_sql)
+  sql <- str_replace(sql, "TABLE_NAME", table_or_sql)
 
   # Joins
 
@@ -78,7 +77,7 @@ code_sql_select <- function(table_or_sql,
   else
     joins <- ""
 
-  sql <- stringr:: str_replace(sql, "JOINS", joins)
+  sql <- str_replace(sql, "JOINS", joins)
 
   # WHERE Statement
 
@@ -92,7 +91,7 @@ code_sql_select <- function(table_or_sql,
   }else
     filters <- ""
 
-  sql <- stringr:: str_replace(sql, "WHERE_STATEMENT",
+  sql <- str_replace(sql, "WHERE_STATEMENT",
                      filters)
 
   # GROUP BY
@@ -104,7 +103,7 @@ code_sql_select <- function(table_or_sql,
   else
     group.by.cols <- ""
 
-  sql <- stringr:: str_replace(sql, "GROUP_BY_STATEMENT", group.by.cols)
+  sql <- str_replace(sql, "GROUP_BY_STATEMENT", group.by.cols)
 
   # ORDER BY
 
@@ -115,9 +114,9 @@ code_sql_select <- function(table_or_sql,
   else
     order.by.cols <- ""
 
-  sql <- stringr:: str_replace(sql, "ORDER_BY_STATEMENT", order.by.cols)
+  sql <- str_replace(sql, "ORDER_BY_STATEMENT", order.by.cols)
 
-  sql <- gsub("\\s+", " ", stringr:: str_trim(sql))
+  sql <- gsub("\\s+", " ", str_trim(sql))
 
   sql
 

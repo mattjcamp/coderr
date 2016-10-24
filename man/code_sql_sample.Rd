@@ -7,12 +7,12 @@
 code_sql_sample(table, filter = NULL)
 }
 \arguments{
-\item{table}{an object of type db_table or character that indicates the table where the records are located}
+\item{table}{indicates the table where the records are located}
 
 \item{filter}{optional filter to limit the records sampled}
 }
 \description{
-SQL Code to get a sample of records
+SQL Code to get a filtered sample of records
 }
 \keyword{database,}
 \keyword{location}
