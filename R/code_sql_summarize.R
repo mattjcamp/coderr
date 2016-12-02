@@ -5,7 +5,9 @@
 #' @details Summarizes the numeric columns from a SELECT statement or table
 #' @keywords stats
 #' @param sql an object of type {\link{code_sql_sample}}, character in SQL format that has SQL which selects records
+#' @param cols the columns that you want to analyze
 #' @param by summarize by these groups
+#' @param include_sdp include the standard deviation (population). This is optional because some databases (SQLite in particular) do not support this statistic.
 #' @export
 #' @examples
 #

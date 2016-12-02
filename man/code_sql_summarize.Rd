@@ -9,7 +9,11 @@ code_sql_summarize(sql, cols, by = NULL, include_sdp = FALSE)
 \arguments{
 \item{sql}{an object of type {\link{code_sql_sample}}, character in SQL format that has SQL which selects records}
 
+\item{cols}{the columns that you want to analyze}
+
 \item{by}{summarize by these groups}
+
+\item{include_sdp}{include the standard deviation (population). This is optional because some databases (SQLite in particular) do not support this statistic.}
 }
 \description{
 SQL Code to get descriptive statistics
