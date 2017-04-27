@@ -19,4 +19,3 @@ Returns a formated sql SELECT query based on parameters. Useful when automating 
 \keyword{coder,}
 \keyword{query}
 \keyword{sql,}
-

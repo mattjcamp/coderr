@@ -24,4 +24,3 @@ code_vector_to_csv_list(c("A","B","C"))
 }
 \keyword{coder,}
 \keyword{sql}
-

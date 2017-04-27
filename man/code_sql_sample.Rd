@@ -17,4 +17,3 @@ SQL Code to get a filtered sample of records
 \keyword{database,}
 \keyword{location}
 \keyword{state,}
-

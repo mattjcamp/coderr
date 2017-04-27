@@ -24,4 +24,3 @@ SQL code to join table
 Joins table to sql query
 }
 \keyword{sql}
-

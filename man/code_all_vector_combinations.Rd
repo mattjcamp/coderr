@@ -16,4 +16,3 @@ Returns all possible combinations of a list optionally appending some elements t
 }
 \keyword{automation}
 \keyword{code}
-

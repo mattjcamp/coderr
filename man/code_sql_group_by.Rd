@@ -22,4 +22,3 @@ SQL Code to get aggregated statistics for groups
 \keyword{database,}
 \keyword{location}
 \keyword{state,}
-

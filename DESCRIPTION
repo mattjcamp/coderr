@@ -7,6 +7,6 @@ Maintainer: Who to complain to <mjcampbell74@gmail.com>
 Description: Helps you to write code; especially useful when you are trying to automate code generation.
 License: What license is it under?
 LazyData: TRUE
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1
 Imports:
     stringr

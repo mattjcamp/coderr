@@ -17,4 +17,3 @@ SQL Code to get a distinct column values
 \keyword{database,}
 \keyword{location}
 \keyword{state,}
-

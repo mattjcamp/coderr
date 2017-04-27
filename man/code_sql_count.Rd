@@ -20,4 +20,3 @@ Counts the rows from a SELECT statement or table
 \keyword{database,}
 \keyword{location}
 \keyword{state,}
-

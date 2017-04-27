@@ -22,4 +22,3 @@ SQL Code to get descriptive statistics
 Summarizes the numeric columns from a SELECT statement or table
 }
 \keyword{stats}
-

@@ -15,4 +15,3 @@ SQL Code to get the top five records from a sample
 \keyword{database,}
 \keyword{location}
 \keyword{state,}
-
