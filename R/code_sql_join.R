@@ -10,8 +10,6 @@
 #' @param sel.cols the columns from the supplied sql that you would like to select
 #' @param join_type the type of join (ie: inner, left, right)
 #' @export
-#' @examples
-#
 
 code_sql_join <- function(sql, table_to_join, by, sel.cols = "*", join_type = "inner"){
 
