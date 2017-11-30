@@ -1,7 +1,7 @@
 Package: coderr
 Type: Package
 Title: A super-simple code generator
-Version: 1.1.0
+Version: 1.1.1
 Author: Matt Campbell
 Maintainer: Who to complain to <mjcampbell74@gmail.com>
 Description: Helps you to write code; especially useful when you are trying to automate code generation.

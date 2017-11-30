@@ -26,7 +26,7 @@ code_group_by_list <- function(group_by_cols) {
     cols_to_add  <- group_by_cols[!group_by_cols %in% g_by_list[[i]]]
     all_cols_order <- c(g_by_list[[i]], cols_to_add)
     all_cols_order <- order(all_cols_order)
-    cols_to_add <- sprintf("'All' as %s", cols_to_add)
+    cols_to_add <- sprintf("'all' as %s", cols_to_add)
     all_cols <- c(g_by_list[[i]], cols_to_add)
     all_cols <- all_cols[all_cols_order]
     all_cols <- code_vector_to_csv_list(all_cols,
