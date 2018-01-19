@@ -10,11 +10,6 @@
 
 code_csv_list_to_vector <- function(csv_list){
 
-  num_words <- str_count(csv_list, ",")
-  v <- NULL
-  for (i in 1:num_words)
-    v <- c(v, str_trim(word(string = csv_list, start = i, end = i, sep = ",")))
-
-  v
+  unlist(strsplit(csv_list, split=","))
 
 }
