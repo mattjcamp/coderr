@@ -4,9 +4,16 @@
 \alias{code_sql_select}
 \title{Code a SQL SELECT}
 \usage{
-code_sql_select(table_or_sql, select.cols = c("*"), joins = NULL,
-  filters = NULL, filters.logical = "AND", group.by.cols = NULL,
-  order.by.cols = NULL, alias = "RECORDS")
+code_sql_select(
+  table_or_sql,
+  select.cols = c("*"),
+  joins = NULL,
+  filters = NULL,
+  filters.logical = "AND",
+  group.by.cols = NULL,
+  order.by.cols = NULL,
+  alias = "RECORDS"
+)
 }
 \arguments{
 \item{table_or_sql}{SQL query or table name that you will select records from}

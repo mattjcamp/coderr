@@ -4,8 +4,11 @@
 \alias{code_vector_to_csv_list}
 \title{Adapt Vector to CSV List}
 \usage{
-code_vector_to_csv_list(vector, add.quotes = TRUE,
-  enclose.in.parenthesis = TRUE)
+code_vector_to_csv_list(
+  vector,
+  add.quotes = TRUE,
+  enclose.in.parenthesis = TRUE
+)
 }
 \arguments{
 \item{vector}{a vector list}

@@ -4,8 +4,12 @@
 \alias{code_sql_group_by}
 \title{Aggregate Grouped Records}
 \usage{
-code_sql_group_by(sql, aggregator.cols, group.by.cols,
-  include.all.possible.combos = FALSE)
+code_sql_group_by(
+  sql,
+  aggregator.cols,
+  group.by.cols,
+  include.all.possible.combos = FALSE
+)
 }
 \arguments{
 \item{sql}{SQL which selects records}

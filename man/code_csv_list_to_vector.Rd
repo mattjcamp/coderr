@@ -12,8 +12,5 @@ code_csv_list_to_vector(csv_list)
 \description{
 Returns a vector
 }
-\examples{
-
-}
 \keyword{coder,}
 \keyword{sql}

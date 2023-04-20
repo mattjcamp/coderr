@@ -3,6 +3,8 @@
 export(code_all_vector_combinations)
 export(code_csv_list_to_vector)
 export(code_group_by_list)
+export(code_make_filter_list)
+export(code_make_select_list)
 export(code_sql_case_statements)
 export(code_sql_count)
 export(code_sql_distinct)
