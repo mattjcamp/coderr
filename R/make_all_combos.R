@@ -1,14 +1,21 @@
 
-#' All Combinations of a List
+#' Make All Combinations of a List of Items
 #'
-#' Returns all possible combinations of a list optionally appending some elements to make sure they are included in each list item
+#' Returns all possible combinations of a list optionally appending 
+#' elements to make sure they are included in each list item
 #' @param vector the list of items
-#' @param include.these.in.each items that you want to make sure are included in each returned itme
-#' @keywords code automation
+#' @param include_these_in_each items that you want to make sure are 
+#' included in each returned itme
 #' @export
 #' @examples
+#' 
+#' make_all_combos(c("A","B","C"))
 
-code_all_vector_combinations <- function(vector, include.these.in.each = NULL){
+
+make_all_combos <- function(
+    vector
+    , include_these_in_each = NULL
+  ){
 
   num.cat <- length(vector) - 1
   c.all <- NULL
@@ -26,7 +33,7 @@ code_all_vector_combinations <- function(vector, include.these.in.each = NULL){
   }
 
  for (i in 1:num.c.all) {
-    gb <- c(include.these.in.each, c.all[[i]])
+    gb <- c(include_these_in_each, c.all[[i]])
     o <- order(gb)
     c.all[[i]] <- unique(gb[o])
   }
@@ -34,7 +41,7 @@ code_all_vector_combinations <- function(vector, include.these.in.each = NULL){
   r <- unique(c.all)
 
   if (length(vector) == 2)
-    r <- c(r, list(c(vector[1], vector[2], include.these.in.each)))
+    r <- c(r, list(c(vector[1], vector[2], include_these_in_each)))
 
   if (length(vector) == 1)
     r <- r[1]

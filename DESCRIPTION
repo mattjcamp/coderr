@@ -1,11 +1,11 @@
 Package: coderr
 Type: Package
 Title: A super-simple code generator
-Version: 1.1.2
+Version: 2.0.0
 Author: Matt Campbell
 Maintainer: Who to complain to <mjcampbell74@gmail.com>
-Description: Helps you to write code; especially useful when you are trying to automate code generation.
-License: What license is it under?
+Description: A few shortcuts that are used for SQL code
+License: MIT
 LazyData: TRUE
 RoxygenNote: 7.2.3
 Imports:
