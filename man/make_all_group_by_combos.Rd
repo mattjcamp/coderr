@@ -2,7 +2,7 @@
 % Please edit documentation in R/make_all_group_by_combos.R
 \name{make_all_group_by_combos}
 \alias{make_all_group_by_combos}
-\title{SQL Group by List}
+\title{Make Group by List for All Combinations of a List of Items}
 \usage{
 make_all_group_by_combos(group_by_cols)
 }

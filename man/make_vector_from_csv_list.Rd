@@ -2,7 +2,7 @@
 % Please edit documentation in R/make_vector_from_csv_list.R
 \name{make_vector_from_csv_list}
 \alias{make_vector_from_csv_list}
-\title{Adapt CSV List to Vector}
+\title{Make a Vector List from a CSV string}
 \usage{
 make_vector_from_csv_list(csv_list)
 }
@@ -12,5 +12,7 @@ make_vector_from_csv_list(csv_list)
 \description{
 Returns a vector
 }
-\keyword{coder,}
-\keyword{sql}
+\examples{
+
+make_vector_from_csv_list("A, B, C")
+}

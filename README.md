@@ -1,23 +1,5 @@
-# Coder
+# Code R
 
-**coderr** helps you write SQL code in a way that presents a clear workflow.
+**coderr** started as a method to automate writing SQL code for use cases that involved applications that would be data driven. You can still see this original package by looking at the branch `snapshot_2025_12_12` on GitHub.
 
-Here is an example that aggregates earthquake information from the built-in
-`quakes` dataset.:
-
-```{r}
-library(sqldf)
-library(coderr)
-
-code_sql_sample("quakes") %>%
-code_sql_group_by(aggregator.cols = "avg(mag) AS mag_mean",
-                  group.by.cols = c("stations")) %>%
-code_sql_select(select.cols = c("stations", "mag_mean"),
-                filters = c("stations < 15"),
-                order.by.cols = c("stations")) %>%
-sqldf()
-```
-
-This calculates earthquake magnitude means by station and then presents only stations with station names with a value less than 15.
-
-**coderr** is used in large scale statistical programming projects where data is stored on remote large scale databases. There's also more to it than that - check out the code and tests to see more.
+More recently, I have adjusted coderr to be a repository for shortcuts that I use in general coding. This continues to be mainly for SQL but coderr has been simplied to make it more useable for quickly writing queries.

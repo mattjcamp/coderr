@@ -1,7 +1,7 @@
 
-context("ALL VECTOR COMBINATIONS")
+context("MAKE ALL COMBOS")
 
-test_that("make_all_combos", {
+test_that("does make_all_combos work?", {
 
   combos <- make_all_combos(c("A","B","C"))
   l <- length(combos)

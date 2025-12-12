@@ -30,9 +30,11 @@ make_all_group_by_combos <- function(group_by_cols) {
     cols_to_add <- sprintf("'all' as %s", cols_to_add)
     all_cols <- c(g_by_list[[i]], cols_to_add)
     all_cols <- all_cols[all_cols_order]
-    all_cols <- make_csv_list_from_vector(all_cols,
-                                        add.quotes = FALSE,
-                                        enclose.in.parenthesis = FALSE)
+    all_cols <- make_csv_list_from_vector(
+      all_cols
+      , add_quotes = FALSE
+      , enclose_in_parenthesis = FALSE
+    )
     s_statement <- all_cols
 
     # PACKAGE STATEMENTS

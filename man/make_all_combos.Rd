@@ -16,3 +16,7 @@ included in each returned itme}
 Returns all possible combinations of a list optionally appending 
 elements to make sure they are included in each list item
 }
+\examples{
+
+make_all_combos(c("A","B","C"))
+}
